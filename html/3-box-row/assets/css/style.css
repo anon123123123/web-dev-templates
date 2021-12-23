@@ -1,0 +1,216 @@
+/* ======== Wide Scope Styles ========
+Vars for color usage */
+:root {
+    font-size: 16px;
+
+    --main-bg-color: rgb(255, 255, 255);
+    --main-txt-color: black;
+    --secondary-bg-color: rgb(160, 160, 134);
+    --secondary-txt-color: rgb(18, 17, 17);
+    --main-border-color: rgb(26, 2, 2);
+    --special-case-color: rgb(206, 114, 114);
+
+    --transition-speed: 2s;
+}
+
+/* For dark mode */
+.dark-mode {
+    --main-bg-color: rgb(0, 0, 0);
+    --main-txt-color: rgb(81, 255, 42);
+    --secondary-bg-color: rgb(16, 16, 16);
+    --secondary-txt-color: rgb(255, 33, 33);
+    --main-border-color: rgb(28, 225, 255);
+    --special-case-color: rgb(78, 5, 181);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Wide scope element styles  */
+body {
+    background-color: var(--special-case-color);
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+}
+
+body, header, hgroup, footer{
+    margin: 0;
+    padding: 0;
+}
+
+/* Make room for nav bar  */
+main {
+    padding-bottom: .2rem;
+    /* margin-top: 4rem; */
+}
+
+/* Alter browser default scroll bar  */
+body::-webkit-scrollbar {
+    width: 0.35rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: var(--secondary-bg-color);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-txt-color);
+} 
+
+hgroup {
+    display: flex;
+}
+
+/* ======== Main Header ======== */
+.main-headers {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+}
+
+.main-headers h1{
+    margin: 0px;
+    border-top: 0px;
+    border-bottom: solid var(--main-border-color);
+    background-color: var(--secondary-bg-color);
+}
+
+.main-headers h2{
+    margin: 0px;
+    border-bottom: solid var(--main-border-color);
+    background-color: var(--secondary-bg-color);
+}
+
+/* ======== Navigation menu ======== */
+.navbar {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    background-color:var(--secondary-bg-color);
+    transition: height 240ms ease;
+}
+
+.nav-bar-ulist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-item {
+    height: 100%;
+}
+
+.nav-item:last-child {
+    margin-left: auto;
+}
+
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 8rem;
+    height: 100%;
+    text-decoration: none;
+    color: var(--main-txt-color);
+    background-color: gray;
+    border: var(--main-border-color) solid 1px;
+}
+
+.svg-nav-item {
+    width: 40px;
+    height: 40px;
+    min-width: 2rem;
+}
+
+.link-text {
+    display: none;
+}
+
+.navbar:hover {
+    height: 9rem;
+}
+
+.navbar:hover .link-text{
+    display: block;
+    padding: 8px;
+}
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-left: 1rem;
+    text-align: center;
+    color: var(--secondary-txt-color);
+    background-color: var(--secondary-bg-color);
+    font-size: 1.5rem;
+    letter-spacing: 0.2ch;
+    height: 100%;
+}
+
+.logo svg {
+    transform: rotate(0deg);
+    transition: transform var(--transition-speed);
+}
+
+.navbar:hover .logo svg {
+    transform: rotate(-540deg);
+}
+
+/* ======== Main Container ======== */
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid white;
+    background-color: var(--secondary-bg-color);
+    border: var(--main-border-color) solid; /* To Do REMOVE */ 
+}
+
+/* ======== Main Container Sections ======== */
+.main-sections {
+    display: flex;
+    border: yellow solid;
+    margin: 1.5rem;
+
+}
+
+.main-sections h2{
+    min-width: 185px;
+    max-width: 185px;
+    /* Makes <p> in flexbox line up; */
+}
+
+/* ======== Images Section ======== */
+.img-container {
+    display: flex;
+    flex-wrap: wrap;
+} 
+
+.img-container img{
+width: 180px;
+height: 90px;
+    
+}  
+
+.main-img {
+    width: 100%;
+} 
+
+/* ======== Footer ======== */
+.footer {
+    margin-top: auto;
+    width: 100%;
+    padding: .2rem;
+    background-color: brown;
+    text-align: center;
+}
+
+/* @media flex-direction: column; to swap headers to top */
